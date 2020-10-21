@@ -3,6 +3,25 @@ import random
 import matplotlib.pyplot as plt
 import argparse
 
+'''
+This program compares the run-time for the implemented sorting algorithms in sortAlgs.py.
+
+It generates numerous sized lists, containing values between 0-100, and takes the time taken for each algorithm to sort 
+them, eventually plotting a log-log graph of the results, as well as the average time taken to sort a single element. 
+
+Due to the random nature of of the generated lists, some sorting algorithms will have particular trouble with certain 
+lists, that others may not have. In order to combat this, the user can specify a command line argument for how many 
+lists of each sized should be generated and timed in order to get a mean average time taken to sort a list of size n.
+
+A typical command line using this option would look like:
+
+>>> python sortAlgComp.py -r 5
+or 
+>>> python sortAlgComp.py --repeats 5
+
+This will do 5 unique n-sized lists to be sorted by each algorithm.
+'''
+
 
 def generateVals(n):
     '''
@@ -78,7 +97,6 @@ def main():
     sortTimes = [[] for _ in range(len(sortingAlgNames))]
 
     for n in nVals:
-        # Collecting time taken to sort n length list for all algorithms.
         avgTimes = [0 for _ in range(len(sortingAlgNames))]
 
         # Loop for number of strings of n length to be sorted, specified by command line argument.

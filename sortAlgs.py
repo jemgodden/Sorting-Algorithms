@@ -1,5 +1,10 @@
 import time
 
+'''
+This file contains the implementation of eight separate sorting algorithms, whose names can be seen below in 
+sortingAlgNames. It also contains some utility functions for looking at lists.
+'''
+
 
 sortingAlgNames = ["Bubble Sort", "Comb Sort", "Insertion Sort", "Selection Sort", "Quick Sort", "Merge Sort",
                    "Shell Sort", "Heap Sort"]
@@ -331,7 +336,8 @@ def heapSort(valList):
         __heapify(valList, n, i)
 
     for i in range(n - 1, 0, -1):
-        # Move large values to the end of the list and re.
+        # Move large values to the end of the list and remake the binary heap, but not including the large values sorted
+        # to the end of the list.
         __swap(valList, 0, i)
         __heapify(valList, i, 0)
 
