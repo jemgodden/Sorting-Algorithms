@@ -41,11 +41,15 @@ It takes a single command line argument, called repeats, which allows the user t
 
 A typical command line using this option would look like:
 
+```sh
 python sortAlgComp.py -r 5
+```
 
 or 
 
+```sh
 python sortAlgComp.py --repeats 5
+```
 
 This will do 5 unique n-sized lists to be sorted by each algorithm. The given value must be an integer. The default value is set to 1 if there is no specified value. 
 
